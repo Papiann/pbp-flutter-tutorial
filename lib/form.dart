@@ -247,12 +247,22 @@ class _MyFormPageState extends State<MyFormPage> {
                                       SizedBox(height: 20),
                                       
                                       // TODO: Munculkan informasi yang didapat dari form
-                                      Center(
-                                        child: Text('Nama : ' + _namaLengkap)
-                                      ),
-                                      Center(
-                                        child: Text('Umur : ' + umur.toString())
-                                      ),
+                                      Center(child: Text('Nama : ' + _namaLengkap)),
+                                      if (jenjangDiploma)
+                                      Center(child: Text('Jenjang: Diploma')),
+                                      if (jenjangSarjana)
+                                      Center(child: Text('Jenjang: Sarjana')),
+                                      if (jenjangMagister)
+                                      Center(child: Text('Jenjang: Magister')),
+                                      if (jenjangDoktor)
+                                      Center(child: Text('Jenjang: Doktor')),
+                                      Center(child: Text('Umur : ' + umur.toString())),
+                                      Center(child: Text('Kelas PBP: '+ kelasPBP)),
+                                      if (_nilaiSwitch) ...[
+                                      Center(child: Text('Practice Mode: ON')),
+                                      ]
+                                      else
+                                      Center(child: Text('Practice Mode: OFF')),
 
                                       TextButton(
                                         onPressed: () {
